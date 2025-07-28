@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: repairchatbot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: repairchatbot
+  template:
+    metadata:
+      labels:
+        app: repairchatbot
+    spec:
+      containers:
+      - name: repairchatbot-deployment
+        image: aylinav/aylinchatbot:84142
+        ports:
+        - containerPort: 8501
